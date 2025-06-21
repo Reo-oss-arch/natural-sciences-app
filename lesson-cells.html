@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRADE 5 - PLANT & ANIMAL CELLS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Grade 5 - LIFE & LIVING</h1>
+    <h2>PLANT & ANMIMAL CELLS</h2>
+  </header>
+
+
+
+<div id="questionBox" class="hidden">
+  <p id="questionText"></p>
+  <div id="questionOptions"></div>
+</div>
+
+  <main>
+
+    <section class="lesson-content decorated-section">
+      <img src="assets/plant cell.png" alt="Plant vs Animal Cell" class="lesson-image">
+      <p>All living things are made of cells. Cells are the building blocks of life.</p>
+      <p>All living things are made up of cells. Cells are the smallest units of life, like tiny building blocks. There are two main types of cells: plant cells and animal cells. Both plant and animal cells have many parts in common. They each have a nucleus, which acts like the brain of the cell, controlling its activities. Both also have a cell membrane, which surrounds the cell and controls what goes in and out. Inside both types of cells is cytoplasm, a jelly-like substance where all the other parts float. Mitochondria are found in both cells too; they produce energy for the cell to function. While plant and animal cells share these features, plant cells have some special parts that animal cells do not. One important part is the cell wall, which gives the plant cell a strong, rigid shape. Another is the chloroplast, which contains green pigment called chlorophyll. Chloroplasts allow plants to make their own food using sunlight through a process called photosynthesis. Plant cells also have one large vacuole to store water and nutrients, while animal cells have smaller ones. Animal cells are usually round or irregular in shape, while plant cells are more box-like because of their rigid walls. Understanding the similarities and differences between plant and animal cells helps us learn how living things grow, survive, and carry out life processes. These cells work together in tissues and organs to keep plants and animals alive. Learning about cells is an important part of understanding life and biology.
+
+</p>
+    </section>
+
+    <section class="lesson-content decorated-section">
+  <h3>WATCH:PLANT & ANIMAL CELL</h3>
+  <div class="responsive-video">
+    <video controls>
+      <source src="assets/Download.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+  <section class="quiz-section">
+    <h3>Check Your Understanding</h3>
+    <button onclick="startQuiz()">Start Quiz</button>
+    <div id="quizContainer"></div>
+  </section>
+  <section class="matching-quiz-section">
+  <h3>🔄 Match the Cell Concepts to Their Definitions</h3>
+  <form id="matchingQuiz">
+    <table class="matching-table">
+      <tr>
+        <th>Concept</th>
+        <th>Match to Definition</th>
+      </tr>
+      <tr>
+        <td>1. Nucleus</td>
+        <td>
+          <select name="q1">
+            <option value="">-- Choose a Definition --</option>
+            <option value="A">Controls the cell’s activities</option>
+            <option value="B">Outer wall found only in plant cells</option>
+            <option value="C">Jelly-like fluid inside the cell</option>
+            <option value="D">Uses sunlight to make food</option>
+            <option value="E">Produces energy for the cell</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>2. Cell Wall</td>
+        <td>
+          <select name="q2">
+            <option value="">-- Choose a Definition --</option>
+            <option value="A">Controls the cell’s activities</option>
+            <option value="B">Outer wall found only in plant cells</option>
+            <option value="C">Jelly-like fluid inside the cell</option>
+            <option value="D">Uses sunlight to make food</option>
+            <option value="E">Produces energy for the cell</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>3. Cytoplasm</td>
+        <td>
+          <select name="q3">
+            <option value="">-- Choose a Definition --</option>
+            <option value="A">Controls the cell’s activities</option>
+            <option value="B">Outer wall found only in plant cells</option>
+            <option value="C">Jelly-like fluid inside the cell</option>
+            <option value="D">Uses sunlight to make food</option>
+            <option value="E">Produces energy for the cell</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>4. Chloroplast</td>
+        <td>
+          <select name="q4">
+            <option value="">-- Choose a Definition --</option>
+            <option value="A">Controls the cell’s activities</option>
+            <option value="B">Outer wall found only in plant cells</option>
+            <option value="C">Jelly-like fluid inside the cell</option>
+            <option value="D">Uses sunlight to make food</option>
+            <option value="E">Produces energy for the cell</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>5. Mitochondria</td>
+        <td>
+          <select name="q5">
+            <option value="">-- Choose a Definition --</option>
+            <option value="A">Controls the cell’s activities</option>
+            <option value="B">Outer wall found only in plant cells</option>
+            <option value="C">Jelly-like fluid inside the cell</option>
+            <option value="D">Uses sunlight to make food</option>
+            <option value="E">Produces energy for the cell</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <button type="button" onclick="checkMatchingQuiz()">✅ Submit Answers</button>
+  </form>
+</section>
+ 
+<section class="navigation-section">
+  <a href="lesson.html?from=lesson">
+    <button>⬅ Back</button>
+  </a>
+
+  <a href="index.html">
+    <button>🏠 Home</button>
+  </a>
+
+  <a href="lesson-cells.html">
+    <button>➡ Next</button>
+  </a>
+</section>
+
+  <footer>
+    <p>&copy; REOBAKLE MOSEKI 2025</p>
+  </footer>
+
+  <script src="script-cells.js"></script>
+
+<script>
+  function checkMatchingQuiz() {
+    const correctAnswers = {
+      q1: "A",
+      q2: "B",
+      q3: "C",
+      q4: "D",
+      q5: "E"
+    };
+
+    let score = 0;
+    for (let key in correctAnswers) {
+      const selected = document.querySelector(`[name="${key}"]`).value;
+      if (selected === correctAnswers[key]) {
+        score++;
+      }
+    }
+
+    alert(`You got ${score} out of 5 correct!`);
+  }
+</script>
+</body>
+  </main>
+</html>
